@@ -278,8 +278,9 @@ def is_no(one_more_input):
     # ==================================
     return result
 
-def main():
-    print("Play Baseball")
+def main(first_game = True):
+    if first_game:
+        print("Play Baseball")
     user_input = 999
     random_number = str(get_not_duplicated_three_digit_number())
     print("Random Number is : ", random_number)
@@ -306,7 +307,7 @@ def main():
                 check_next_game = input("You win, one more(Y/N)?")
 
             if is_yes(check_next_game):
-                main()
+                main(first_game = False)
                 break
             elif is_no(check_next_game):
                 print("Thank you for using this program")
