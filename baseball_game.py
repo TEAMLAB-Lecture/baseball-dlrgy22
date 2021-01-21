@@ -92,6 +92,7 @@ def is_duplicated_number(three_digit):
     # '''
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
+    
     check = set()
     result = False
     for string_element in three_digit:
@@ -156,15 +157,21 @@ def get_not_duplicated_three_digit_number():
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
     # get_random_number() 함수를 사용하여 random number 생성
-    number = []
-    result = ""
-    while len(number) < 3:
-        rand_num = random.randint(1, 9)
-        if rand_num not in number:
-            number.append(rand_num)
-            result += str(rand_num)
 
-    result = int(result)
+    # number = []
+    # result = ""
+    # while len(number) < 3:
+    #     rand_num = random.randint(1, 9)
+    #     if rand_num not in number:
+    #         number.append(rand_num)
+    #         result += str(rand_num)
+
+    # result = int(result)
+    while True:
+        number = get_random_number()
+        if is_validated_number(str(number)):
+            break
+    result = number
     # ==================================
     return result
 
@@ -309,6 +316,7 @@ def main(first_game = True):
             if is_yes(check_next_game):
                 main(first_game = False)
                 break
+            
             elif is_no(check_next_game):
                 print("Thank you for using this program")
                 print("End of the Game")
